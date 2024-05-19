@@ -1,9 +1,3 @@
-
-
-
-
-
-
 #puts "QUAL É SEU NOME?"
 #nome = gets.chomp
 #puts "QUAL É SUA IDADE?"
@@ -11,4 +5,3 @@
 
 #puts "HELLO #{nome}"
 #puts "#{nome} tem #{idade} anos"
-    
