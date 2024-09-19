@@ -8,7 +8,10 @@ def calculadora (a, b, operacao)
   when "*"
     a * b
   when "/"
+    return "Error: não é permitido divisão por zero" if  b == 0
     a / b
+  else
+    "Operação inválida"
   end
 end
 
