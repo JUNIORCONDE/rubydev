@@ -28,3 +28,8 @@ cor = gets.chomp
 # segunda forma
 meu_carro = Carro.new(modelo, ano, cor)
 meu_carro.info
+
+# nesse exercicio, não estamos utilizando [] para salvar e nem loop, pois apenas testes
+# vamos criar o mesmo codigo, mas utilizadno LOOP, pois teremos interassão com usuário, opções.
+# e vamos utilizar ferramenta para salvar em json, para entender como funciona.
+
