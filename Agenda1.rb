@@ -1,3 +1,21 @@
+# Classe Agenda (representa um contato individual)
+class Agenda
+  attr_accessor :nome, :numero, :cidade
+
+  def initialize(nome, numero, cidade)
+    @nome = nome
+    @numero = numero
+    @cidade = cidade
+  end
+
+# Método para exibir o menu
+  def exibir_contato
+    puts "Nome: #{@nome}"
+    puts "Número: #{@numero}"
+    puts "Cidade: #{@cidade}"
+  end
+end
+
 def exibir_menu
   puts "\n----- MENU -----"
   puts "1. Adicionar Contato"
@@ -6,6 +24,7 @@ def exibir_menu
   print "Escolha uma opção: "
 end
 
+# Método para adicionar um novo contato
 def adicionar_contato(agenda)
   puts "\nAdicionar Novo Contato"
   print "Nome: "
@@ -15,39 +34,28 @@ def adicionar_contato(agenda)
   print "Cidade: "
   cidade = gets.chomp
 
-  # Cria um novo contato e adiciona na agenda (um array de contatos)
-  contato = Contato.new(nome, numero, cidade)
+  # Cria uma nova instância da classe Agenda (agora representando o contato)
+  contato = Agenda.new(nome, numero, cidade)
   agenda << contato
   puts "\nContato adicionado com sucesso!"
 end
 
-def exibir_agenda(agenda)
-  puts "\nTodos os Contatos Registrados:"
-  agenda.each_with_index do |contato, index|
-    puts "\nContato ##{index + 1}:"
-    contato.exibir_contato
+# Método para exibir todos os contatos
+def exibir_contato(agenda)
+  if agenda.empty?
+    puts "\nNenhum contato registrado ainda."
+  else
+    puts "\nTodos os Contatos Registrados:"
+    agenda.each_with_index do |contato, index|
+      puts "\n---- Contato ##{index + 1} ----"
+      contato.exibir_contato
+    end
   end
 end
 
-# Classe Contato
-class Contato
-  attr_accessor :nome, :numero, :cidade
-
-  def initialize(nome, numero, cidade)
-    @nome = nome
-    @numero = numero
-    @cidade = cidade
-  end
-
-  def exibir_contato
-    puts "Nome: #{@nome}"
-    puts "Número: #{@numero}"
-    puts "Cidade: #{@cidade}"
-  end
-end
 
 # Programa Principal
-agenda = []  # Array que armazena os contatos
+agenda = []  # Array que armazena os contatos (Agenda agora representa o contato)
 
 loop do
   exibir_menu
@@ -55,9 +63,9 @@ loop do
 
   case opcao
   when 1
-    adicionar_contato(agenda)
+    adicionar_contato(agenda)  # Adiciona contato ao array de agenda
   when 2
-    exibir_agenda(agenda)
+    exibir_contato(agenda)  # Exibe todos os contatos armazenados
   when 3
     puts "Saindo do programa..."
     break
