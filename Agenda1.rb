@@ -8,7 +8,7 @@ class Agenda
     @cidade = cidade
   end
 
-# Método para exibir o menu
+
   def exibir_contato
     puts "Nome: #{@nome}"
     puts "Número: #{@numero}"
@@ -16,6 +16,7 @@ class Agenda
   end
 end
 
+# Método para exibir o menu
 def exibir_menu
   puts "\n----- MENU -----"
   puts "1. Adicionar Contato"
@@ -45,6 +46,7 @@ def exibir_contato(agenda)
   if agenda.empty?
     puts "\nNenhum contato registrado ainda."
   else
+
     puts "\nTodos os Contatos Registrados:"
     agenda.each_with_index do |contato, index|
       puts "\n---- Contato ##{index + 1} ----"
